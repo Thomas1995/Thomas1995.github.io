@@ -4,7 +4,7 @@ import xml.etree.ElementTree as ET
 def list_all( tagList ):
     tagListString = ''
     for tag in tagList:
-        tagListString += tag.text + ' '
+        tagListString += tag.text + ' , '
     return tagListString
 
 def getBoardGameInfo( ID ):
