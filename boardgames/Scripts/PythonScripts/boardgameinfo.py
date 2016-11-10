@@ -52,4 +52,4 @@ def getBoardGameInfo( ID ):
 
     ret += bestWithNo + '\n'
 
-    return ret
+    return ret.replace(u'\u2013', '-')
