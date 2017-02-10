@@ -1,0 +1,113 @@
+<nodes>
+  <node id="start">
+    <description>
+      Ploaia tocmai ce se oprise, la fel ca sunetul de pasi al celor doi. Iesira de sub geaca de piele uda, iar ea ii multumi pentru ca o adusese pana in fata curtii.
+      Irene: A fost... dragut, se fastaci ea.
+    </description>
+
+    <options>
+      <option node="s1_sarut">Sarut-o</option>
+      <option node="s1_imbratisare">Imbratiseaz-o</option>
+      <option node="s1_pa">Ia-ti la revedere</option>
+    </options>
+
+    <flags>
+      <flag key="Irene" value="20" />
+    </flags>
+  </node>
+
+  <node id="s1_imbratisare">
+    <description>
+      Teodor isi puse geaca pe umar, apoi o lua pe Irene in brate, avand grija sa nu o ude.
+      Irene: Deci... ne mai vedem?
+    </description>
+
+    <options>
+      <option node="s1_revedere">Da</option>
+      <option node="s1_sarut">Sarut-o</option>
+      <option node="s1_pa">Ia-ti la revedere</option>
+    </options>
+  </node>
+
+  <node id="s1_sarut">
+    <description>
+      In cateva clipe, Teodor o saruta pe Irene. Brusc. Iar aceasta coopera, simtind cum fiori o strabat.
+      Irene: Teodor...
+    </description>
+
+    <options>
+      <option node="s1_pasiune">Shh</option>
+      <option node="s1_pasiune">Continua</option>
+      <option node="s1_scuze">Cere-ti scuze</option>
+    </options>
+
+    <flags>
+      <flag key="Irene" value="20" />
+    </flags>
+  </node>
+
+  <node id="s1_pasiune">
+    <description>
+      O apuca ferm de spate si aplecand-o usor, ii pecetlui buzele cu inca un sarut. Atingandu-i tandru obrazul, o privi pret de cateva clipe. Niciunul nu se putu opri din zambit.
+    </description>
+
+    <options>
+      <option node="s1_revedere">Ne mai vedem</option>
+    </options>
+
+    <flags>
+      <flag key="Irene" value="20" />
+    </flags>
+  </node>
+
+  <node id="s1_scuze">
+    <description>
+      Teodor: Ah, ah, scuze. Cred ca m-a luat valul.
+      Irene: Nu mi-a displacut, il imbratisa ea.
+    </description>
+
+    <options>
+      <option node="s1_revedere">Ia-ti la revedere</option>
+    </options>
+   </node>
+
+  <node id="s1_revedere">
+    <description>
+      Teodor: Ne mai vedem! isi lua el adio, dupa care ea pleca in casa, zambindu-i.
+    </description>
+
+    <options>
+      <option node="s1_asteptare">Asteapta pana intra</option>
+      <option node="s1_pa">Pleaca</option>
+    </options>
+  </node>
+
+  <node id="s1_asteptare">
+    <description>
+      Teodor o urmari cu privirea pana cand aceasta inchise usa, dar nu inainte de a-i mai face inca o data cu mana.
+    </description>
+
+    <options>
+      <option node="s1_pa">Pleaca</option>
+    </options>
+  </node>
+
+  <node id="s1_pa">
+    <description>
+      Teodor pleca fara alte ganduri.
+      Teodor: Sper sa nu racesc, murmura el, privind spre geaca uda. Nah, nu cred.
+      Luand-o inapoi pe aleea acum plina de balti, incerca sa se grabeasca. Soarele era pe sfarsite. Atata liniste...
+    </description>
+
+    <options>
+      <options>
+        <option node="">In continuare</option>
+      </options>
+    </options>
+
+    <flags>
+      <flag key="Irene" value="-10" />
+    </flags>
+  </node>
+  
+</nodes>
