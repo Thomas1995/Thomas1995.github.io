@@ -3,6 +3,7 @@ var console;
 var input;
 var xmlDoc;
 var flags;
+var firstNode = 'start';
 
 function bodyLoad() {
     console = document.getElementById('story');
@@ -15,7 +16,7 @@ function bodyLoad() {
 
     flags = {};
 
-    loadNode('start');
+    loadNode(firstNode);
 }
 
 function loadNode(nodeName) {
@@ -37,7 +38,41 @@ function loadNode(nodeName) {
         }
     }
 
-    addTextToConsole(description, options);
+    var validOptions = [];
+
+    for (var i = 0; i < options.length; ++i) {
+        var condition = options[i].getAttribute('condition');
+
+        var condSat = true;
+        if (condition) {
+            var cond = condition.split(';');
+            var condSat = allConditionsSatisfied(cond);
+        }
+
+        if (condSat) {
+            validOptions.push(options[i]);
+        }
+        
+    }
+
+    addTextToConsole(description, validOptions);
+}
+
+function allConditionsSatisfied(cond) {
+    for (var i = 0; i < cond.length; ++i) {
+        if (cond[i].includes('>')) {
+            var parts = cond[i].split('>');
+            if (!flags[parts[0]] || flags[parts[0]] <= parseInt(parts[1]))
+                return false;
+        }
+        else {
+            var parts = cond[i].split('<');
+            if (!flags[parts[0]] || flags[parts[0]] >= parseInt(parts[1]))
+                return false;
+        }
+    }
+
+    return true;
 }
 
 function addTextToConsole(text, options) {
